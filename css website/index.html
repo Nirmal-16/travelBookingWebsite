@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <style>
+    .header{
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          justify-content: space-between;
+    }
+    .contactandsearch{
+        display:flex;
+    }
+    .contact{
+        display: flex;
+        color:rgb(125, 124, 124);
+        margin-right:20px;
+    }
+    .search input{
+        border:2px solid grey;
+        padding:10px;
+        border-radius: 30px;
+        margin-right: 50px;
+    }
+    nav{
+        position: sticky;
+        top:0px;
+        z-index: 1;
+        display:flex;
+        background-color: rgb(156, 223, 253);
+        justify-content:space-around;
+        padding:7px;
+        align-items: center;
+    }
+    ul li{
+        display:inline;
+        font-size: 18px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        padding:10px;
+        color:rgb(20, 20, 58); 
+    }
+    .buttons button{
+        border:2px solid  rgb(0, 67, 150);
+        margin-right: 10px;
+        font-size:13px;
+        padding:7px;
+        border-radius: 10px;
+        background-color: rgb(0, 67, 150);
+        color:white;
+    }
+    ul li:hover{
+        background-color: rgb(0, 67, 150);
+        color:white;
+        border-radius: 5px;
+        }
+    nav button:hover{
+        background-color: white;
+        color: rgb(0, 67, 150);
+        border:2px solid rgb(0, 67, 150);
+    }
+    .imagesection{
+        background-image: url("travel\ background.jpg");
+        height:800px;
+        background-size: cover;
+        position:relative;
+    }
+    .quotes h1{
+        position:absolute;
+        font-variant: small-caps;
+        top:20px;
+        left:20px;
+        font-size:50px;
+    }
+    .quotes p{
+        width:590px;
+        font-size:35px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        word-spacing: 10px;
+        text-align: justify;
+        position:absolute;
+        top:100px;
+        left:30px;
+    }
+    .quotes button{
+        font-size: 40px;
+        font-variant: small-caps;
+        padding:20px;
+        border:none;
+        border-radius:30px;
+        background-color: rgb(0, 41, 94);
+        color:white;
+        position:absolute;
+        top:500px;
+        left:200px;
+    }
+    .filter{
+        display: flex;
+        position:absolute;
+        top:650px;
+        left:35px;
+        border:5px solid rgb(0, 41, 94);
+        padding:15px;
+        font-variant: small-caps;
+        font-size:20px;
+        background-color: transparent;
+    }
+    .filter .header{
+        background-color: rgb(0, 41, 94);
+        color:white;
+        border:none;
+        border-radius:7px;
+        padding:3px 15px;
+        position:absolute;
+        top:-23px;
+        left:20px;
+        font-size: 17px;
+    }
+    .filter .singlefilter{
+        margin:0px 30px;
+    }
+    .filter p{
+        margin-top: 10px;
+    }
+    .filter .singlefilter input{
+        margin-top: 10px;
+        padding:5px;
+    }
+    .filter .singlefilter button{
+        padding:5px 25px;
+        background-color: rgb(0, 41, 94);
+        color:white;
+        border:none;
+        border-radius:7px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        font-size: 17px;
+        margin-left: 10px;
+    } 
+    .photosection{
+        padding:10px 100px;
+        background-color: rgb(237, 237, 237);
+        position: relative;
+    }
+    .photos{
+        display:flex;
+        margin-top:10px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .photo{
+       filter:drop-shadow(2px 2px 6px rgb(58, 58, 58));
+       width:350px;
+       height:300px;
+    }
+    .details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:10px;
+        background-color: white;
+    }
+    .photo img{
+        width:350px;
+        height:230px;
+    }
+    .photo:hover{
+        transform: scale(103%);
+    }
+    .name p{
+        font-size: 18px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+    }
+    .details button{
+        font-size: 15px;
+        padding: 6px 15px;
+        border-radius: 6px;
+        background-color:  rgb(0, 41, 94);
+        color:white;
+        border: none;
+    }
+    .details button:hover{
+        background-color: rgb(190, 190, 190);
+        color: rgb(0, 41, 94);
+        border:2px solid rgb(0, 41, 94);
+    } 
+    .hr1{
+        width:1090px;
+        position:absolute;
+        top:30px;
+        left:320px;
+    }
+    .hr2{
+        width:1160px;
+        position:absolute;
+        top:388px;
+        left:248px;
+    }
+    .bigphoto{
+        display: flex;
+        justify-content: space-between;
+    }
+    .bigphoto img{
+        margin-top:20px;
+        width:400px;
+        filter:drop-shadow(3px 3px 7px rgb(58, 58, 58));
+    }
+    .bigphoto img:hover{
+        transform: scale(103%);
+    }
+    .latest{
+        background-color: white;
+        padding: 10px 20px;
+        margin-top:25px;
+        font-size: 17px;
+        margin-bottom: 70px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+    }
+    .footer{
+        display: flex;
+        justify-content:space-around;
+        padding:10px 30px;
+        color:rgb(112, 112, 112);
+    }
+    .footer h6,input,button{
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    .icons img{
+        border-radius: 50%;
+        width:30px;
+        height: 30px;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+    .dontmiss button{
+            padding:7px 20px;
+            border:1.5px solid grey;
+            border-radius: 5px;
+            color:rgb(64, 64, 64);
+    }
+    .dontmiss input{
+        padding:7px 20px;
+        border:1.5px solid grey;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="travel logo.jpg" alt="no image" height="120px" width="120px">
+        </div>
+        <div class="contactandsearch">
+            <div class="contact">
+                <img src="call logo.png" alt="no image" height="50px" width="50px">
+                <p>Call 24/7 Support <br> +91 (44) 1234 4567</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search entire website  🔎">
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>Hotels</li>
+            <li>Flights</li>
+            <li>Vacations</li>
+            <li>Hot Deals</li>
+            <li>Travel Guides</li>
+            <li>Blogs</li>
+        </ul>
+        <div class="buttons">
+            <button>SIGNUP</button>
+            <button>MY ACCOUNT</button>
+        </div>
+    </nav>
+    <div class="imagesection">
+        <div class="quotes">
+            <h1>Welcome To Your Vacation ....!</h1>
+            <p>Enjoy beauty of the world We offers Budget friendly quality family holidays primarily through vacation ownership memberships.Enjoy beauty of the world We offers Budget friendly quality family holidays primarily through vacation ownership memberships.</p>
+            <button>Book Now</button>
+        </div>
+        <div class="filter">
+            <button class="header">Book Your Travel</button>
+            <div class="singlefilter">
+                <p>What ?</p>
+                <input list="companies" name="company" id="company" placeholder="Flight Name">
+                <datalist id="companies">
+                <option value="Air Asia">
+                <option value="Kingfisher">
+                <option value="Jet Airways">
+                </datalist>
+            </div>
+            <div class="singlefilter">
+                <p>Where ?</p>
+                <input list="places" name="place" id="place" placeholder="Places">
+                <datalist id="places">
+                <option value="Chennai">
+                <option value="Mumbai">
+                <option value="Delhi">
+                <option value="Chandigarh">
+                </datalist>
+            </div>
+            <div class="singlefilter">
+                <p>When ?</p>
+                <input type="date">
+            </div>
+            <div class="singlefilter">
+                <p>Who ?</p>
+                <input type="number" placeholder="Rooms">
+                <input type="number" placeholder="Adults">
+                <input type="number" placeholder="Children">
+                <button>Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="photosection">
+        <h1>Popular Hotels</h1><hr  class="hr1">
+        <div class="photos">
+            <div class="photo">
+                <img src="hotel1.jpg" alt="no image">
+                <div class="details">
+                    <div class="name">
+                        <p>Hotel Mariott</p>
+                        <p>Melbourne,Australia</p>
+                    </div>
+                    <button>Rs.18,999</button>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="hotel2.jpg" alt="no image">
+                <div class="details">
+                    <div class="name">
+                        <p>Mont Blanc</p>
+                        <p>Zurich,Switzerland</p>
+                    </div>
+                    <button>Rs.14,999</button>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="hotel3.jpg" alt="no image">
+                <div class="details">
+                    <div class="name">
+                        <p>Hotel Taj Palace</p>
+                        <p>Mumbai,India</p>
+                    </div>
+                    <button>Rs.12,999</button>
+                </div>
+            </div>
+        </div>
+        <h1>Hot Deals</h1><hr class="hr2">
+        <div class="bigphoto">
+            <img src="hotdeal1.jpg" alt="no image">
+            <img src="hotdeal2.jpg" alt="no image">
+        </div>
+        <p class="latest">Latest Blogs ></p>
+    </div>
+    <div class="footer">
+        <div class="company">
+            <h2>Company</h3>
+            <h6>About the Company</h6>
+            <h6>Terms and Conditions</h6>
+            <h6>Privacy Policy</h6>
+            <h6>Career</h6>
+            <h6>Address</h6>
+        </div>
+        <div class="customer">
+            <h2>Customer Support</h3>
+            <h6>Contact</h6>
+            <h6>FAQ</h6>
+        </div>
+        <div class="followus">
+            <h2>Follow us</h3>
+            <div class="icons">
+                <img src="facebook.jpg" alt="no image" height="30px">
+                <img src="linkedin.jpg" alt="no image" height="30px">
+                <img src="insta.jpg" alt="no image" height="30px">
+                <img src="twitter.jpg" alt="no image" height="30px">
+                <img src="youtube.jpg" alt="no image">
+            </div>
+        </div>
+        <div class="dontmiss">
+            <h2>Don't miss our deals and offers</h3>
+            <input type="email" placeholder="Enter your email id">
+            <button>SUBCRIBE</button>
+        </div>
+    </div>
+</body>
+</html>
